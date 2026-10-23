@@ -386,16 +386,18 @@ dependencies only.
 
 ## Using it in your project
 
-The library is not on Maven Central yet. Install it into your local Maven repository with `mvn install`, then
-add:
+The library is on Maven Central:
 
 ```xml
 <dependency>
     <groupId>tech.jaylu</groupId>
     <artifactId>mu-specced-handlers</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
 </dependency>
 ```
+
+Release notes are on the [GitHub releases page](https://github.com/trippletick/mu-specced-handlers/releases). See
+[RELEASE.md](RELEASE.md) for how releases are made.
 
 It depends on `io.muserver:mu-server` 2.3.2 or later in the 2.x line.
 

@@ -23,6 +23,7 @@
 
     <developers>
         <developer>
+            <id>jaylu</id>
             <name>Jay LU</name>
             <url>https://github.com/jaylu</url>
         </developer>
@@ -31,7 +32,8 @@
     <scm>
         <url>https://github.com/trippletick/mu-specced-handlers</url>
         <connection>scm:git:https://github.com/trippletick/mu-specced-handlers.git</connection>
-        <developerConnection>scm:git:git@github.com:trippletick/mu-specced-handlers.git</developerConnection>
+        <developerConnection>scm:git:ssh://git@github.com/trippletick/mu-specced-handlers.git</developerConnection>
+        <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
@@ -43,6 +45,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mu-server.version>2.3.2</mu-server.version>
         <junit.version>5.11.3</junit.version>
+        <!-- reproducible builds; updated by the release workflow -->
+        <project.build.outputTimestamp>2026-10-24T00:00:00Z</project.build.outputTimestamp>
     </properties>
 
     <dependencies>
@@ -103,6 +107,78 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.2</version>
             </plugin>
+            <!-- Maven Central requires sources and javadoc jars -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.4.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.12.0</version>
+                <configuration>
+                    <doclint>all,-missing</doclint>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <!-- mvn -P release deploy: sign and publish to Maven Central -->
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.2.8</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.11.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                            <waitUntil>published</waitUntil>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
