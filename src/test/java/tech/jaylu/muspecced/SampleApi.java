@@ -1,4 +1,4 @@
-package io.github.jaylu.muspecced;
+package tech.jaylu.muspecced;
 
 import io.muserver.MuHandler;
 import org.json.JSONArray;
@@ -13,8 +13,8 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static io.github.jaylu.muspecced.SpeccedHandler.context;
-import static io.github.jaylu.muspecced.SpeccedHandler.specced;
+import static tech.jaylu.muspecced.SpeccedHandler.context;
+import static tech.jaylu.muspecced.SpeccedHandler.specced;
 import static io.muserver.Method.DELETE;
 import static io.muserver.Method.GET;
 import static io.muserver.Method.PATCH;

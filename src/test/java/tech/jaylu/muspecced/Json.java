@@ -1,4 +1,4 @@
-package io.github.jaylu.muspecced;
+package tech.jaylu.muspecced;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

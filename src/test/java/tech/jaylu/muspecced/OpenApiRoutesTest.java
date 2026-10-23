@@ -1,4 +1,4 @@
-package io.github.jaylu.muspecced;
+package tech.jaylu.muspecced;
 
 import io.muserver.RouteHandler;
 import io.muserver.openapi.OperationObject;

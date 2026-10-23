@@ -34,7 +34,7 @@ build the OpenAPI document, so the document matches what is mounted.
 ## Quick start
 
 ```java
-import static io.github.jaylu.muspecced.SpeccedHandler.route;
+import static tech.jaylu.muspecced.SpeccedHandler.route;
 import static io.muserver.Method.*;
 import static io.muserver.openapi.InfoObjectBuilder.infoObject;
 
@@ -342,7 +342,7 @@ Other useful checks:
   in code review. See the ordering limitation below.
 - **Validate the spec.** The tests in this project use `swagger-parser` to check that the generated document
   is valid OpenAPI 3.
-- **Explore the sample.** `src/test/java/io/github/jaylu/muspecced/SampleApi.java` is a complete example
+- **Explore the sample.** `src/test/java/tech/jaylu/muspecced/SampleApi.java` is a complete example
   covering GET, POST, PUT, PATCH, DELETE, a hand-written multi-operation handler, an undocumented handler and a
   context. Running the tests writes its document to `target/sample-openapi.json`.
 
@@ -400,6 +400,9 @@ Release notes are on the [GitHub releases page](https://github.com/trippletick/m
 [RELEASE.md](RELEASE.md) for how releases are made.
 
 It depends on `io.muserver:mu-server` 2.3.2 or later in the 2.x line.
+
+From the next release the classes are in the `tech.jaylu.muspecced` package, matching the group ID. Version 0.1.0
+has them in `io.github.jaylu.muspecced`. Nothing else changed, so upgrading only means updating imports.
 
 ## License
 

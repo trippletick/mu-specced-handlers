@@ -1,4 +1,4 @@
-package io.github.jaylu.muspecced;
+package tech.jaylu.muspecced;
 
 import io.muserver.ContentTypes;
 import io.muserver.Method;

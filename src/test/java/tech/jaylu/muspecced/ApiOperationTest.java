@@ -1,4 +1,4 @@
-package io.github.jaylu.muspecced;
+package tech.jaylu.muspecced;
 
 import io.muserver.openapi.OperationObject;
 import io.muserver.openapi.ParameterObject;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static io.github.jaylu.muspecced.ApiOperation.apiOperation;
+import static tech.jaylu.muspecced.ApiOperation.apiOperation;
 import static io.muserver.Method.CONNECT;
 import static io.muserver.Method.GET;
 import static io.muserver.openapi.OperationObjectBuilder.operationObject;

@@ -1,4 +1,4 @@
-package io.github.jaylu.muspecced;
+package tech.jaylu.muspecced;
 
 import io.muserver.openapi.SchemaObject;
 import org.junit.jupiter.api.Test;

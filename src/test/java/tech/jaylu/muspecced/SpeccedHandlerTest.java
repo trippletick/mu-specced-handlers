@@ -1,4 +1,4 @@
-package io.github.jaylu.muspecced;
+package tech.jaylu.muspecced;
 
 import io.muserver.MuHandler;
 import io.muserver.MuServer;
@@ -14,10 +14,10 @@ import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-import static io.github.jaylu.muspecced.SpeccedHandler.combine;
-import static io.github.jaylu.muspecced.SpeccedHandler.context;
-import static io.github.jaylu.muspecced.SpeccedHandler.route;
-import static io.github.jaylu.muspecced.SpeccedHandler.specced;
+import static tech.jaylu.muspecced.SpeccedHandler.combine;
+import static tech.jaylu.muspecced.SpeccedHandler.context;
+import static tech.jaylu.muspecced.SpeccedHandler.route;
+import static tech.jaylu.muspecced.SpeccedHandler.specced;
 import static io.muserver.Method.GET;
 import static io.muserver.Method.POST;
 import static org.junit.jupiter.api.Assertions.assertEquals;

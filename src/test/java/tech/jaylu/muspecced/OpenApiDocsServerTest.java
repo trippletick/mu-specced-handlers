@@ -1,4 +1,4 @@
-package io.github.jaylu.muspecced;
+package tech.jaylu.muspecced;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import io.muserver.MuServer;
@@ -17,10 +17,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-import static io.github.jaylu.muspecced.Json.keys;
-import static io.github.jaylu.muspecced.Json.param;
-import static io.github.jaylu.muspecced.Json.sorted;
-import static io.github.jaylu.muspecced.Json.texts;
+import static tech.jaylu.muspecced.Json.keys;
+import static tech.jaylu.muspecced.Json.param;
+import static tech.jaylu.muspecced.Json.sorted;
+import static tech.jaylu.muspecced.Json.texts;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

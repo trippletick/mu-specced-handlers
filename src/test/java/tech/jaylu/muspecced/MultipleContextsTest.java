@@ -1,4 +1,4 @@
-package io.github.jaylu.muspecced;
+package tech.jaylu.muspecced;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import io.muserver.ContextHandlerBuilder;
@@ -18,11 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
-import static io.github.jaylu.muspecced.Json.keys;
-import static io.github.jaylu.muspecced.Json.sorted;
-import static io.github.jaylu.muspecced.Json.texts;
-import static io.github.jaylu.muspecced.SpeccedHandler.context;
-import static io.github.jaylu.muspecced.SpeccedHandler.route;
+import static tech.jaylu.muspecced.Json.keys;
+import static tech.jaylu.muspecced.Json.sorted;
+import static tech.jaylu.muspecced.Json.texts;
+import static tech.jaylu.muspecced.SpeccedHandler.context;
+import static tech.jaylu.muspecced.SpeccedHandler.route;
 import static io.muserver.Method.DELETE;
 import static io.muserver.Method.GET;
 import static io.muserver.Method.POST;
