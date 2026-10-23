@@ -43,6 +43,14 @@ jobs:
           CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
+      - name: Keep the Central bundle for troubleshooting
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: central-bundle
+          path: target/central-publishing/central-bundle.zip
+          if-no-files-found: ignore
+
       - name: Create GitHub release
         run: gh release create "$GITHUB_REF_NAME" --generate-notes target/mu-specced-handlers-*.jar
         env:
