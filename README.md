@@ -392,7 +392,7 @@ The library is on Maven Central:
 <dependency>
     <groupId>tech.jaylu</groupId>
     <artifactId>mu-specced-handlers</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
 </dependency>
 ```
 
@@ -401,8 +401,8 @@ Release notes are on the [GitHub releases page](https://github.com/trippletick/m
 
 It depends on `io.muserver:mu-server` 2.3.2 or later in the 2.x line.
 
-From the next release the classes are in the `tech.jaylu.muspecced` package, matching the group ID. Version 0.1.0
-has them in `io.github.jaylu.muspecced`. Nothing else changed, so upgrading only means updating imports.
+Since 0.2.0 the classes are in the `tech.jaylu.muspecced` package, matching the group ID. Version 0.1.0 had
+them in `io.github.jaylu.muspecced`. Nothing else changed, so upgrading only means updating imports.
 
 ## License
 
